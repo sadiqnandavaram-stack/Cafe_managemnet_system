@@ -1,0 +1,101 @@
+```css
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* ================= NAVBAR ================= */
+#para{
+ 
+    color: white;
+    display: flex;
+    padding-left: 50%;
+
+}
+.navbar {
+    width: 100%;
+    height: 60px;
+
+    background-color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+   
+}
+
+
+/* TOP NAVIGATION */
+
+#nav {
+    display: flex;
+    gap: 30px;
+    margin:30px
+    
+    
+}
+
+#nav li {
+    list-style: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:  0.5 ease-in-out ;
+    color:white;
+}
+#nav li:hover{
+    color: orange;
+
+}
+
+/* ================= MENU SECTION ================= */
+
+.menu-section {
+    position: relative;
+}
+
+
+
+.slide1 img{
+    width:100%;
+    }
+
+/* ================= TITLE ================= */
+
+#ODD {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+
+    
+}
+
+#ODD h1 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
