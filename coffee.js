@@ -189,21 +189,33 @@ const bookTable =
 const getInTouch =
     document.getElementById("getInTouch");
 
-
-if (bookTable) {
+    if (bookTable) {
 
     bookTable.addEventListener(
         "click",
         function () {
 
-            alert(
-                "Thank you! Table booking will be available soon. ☕"
-            );
+            placeCoffeeOrder("Cappuccino", 1);
 
         }
     );
 
 }
+
+// if (bookTable) {
+
+//     bookTable.addEventListener(
+//         "click",
+//         function () {
+
+//             alert(
+//                 "Thank you! Table booking will be available soon. ☕"
+//             );
+
+//         }
+//     );
+
+// }
 
 
 if (getInTouch) {
@@ -323,5 +335,71 @@ if (footerLogo) {
 
         }
     );
+
+}
+
+
+/* ================= COFFEE ORDER API ================= */
+
+async function placeCoffeeOrder(coffee, quantity) {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/orders",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    coffee: coffee,
+                    quantity: quantity
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Order failed");
+        }
+
+        console.log("Order saved:", data);
+
+        alert("Order placed successfully! ☕");
+
+    } catch (error) {
+
+        console.error("Error:", error);
+
+        alert("error" + error.message);
+    }
+}
+
+const orderForm = document.getElementById("orderForm");
+
+if (orderForm) {
+
+    orderForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const selectedCoffee = document.getElementById("coffee").value;
+        const selectedQuantity = document.getElementById("quantity").value;
+
+        if (!selectedCoffee) {
+            alert("Please select a coffee.");
+            return;
+        }
+
+        placeCoffeeOrder(
+            selectedCoffee,
+            Number(selectedQuantity)
+        );
+
+    });
 
 }

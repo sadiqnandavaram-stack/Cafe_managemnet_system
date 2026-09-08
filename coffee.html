@@ -133,7 +133,7 @@
 
         <!-- ================= OUR STORY ================= -->
 
-        <section class="hi" id="coffee">
+        <section class="hi" id="coffeesection">
 
             <div id="photo">
 
@@ -341,6 +341,36 @@
                     >
                         Get in Touch
                     </button>
+
+                    <form id="orderForm">
+
+    <h2>Place Your Coffee Order</h2>
+
+    <label for="coffee">Choose Coffee:</label>
+
+    <select id="coffee" required>
+        <option value="">Select Coffee</option>
+        <option value="Cappuccino">Cappuccino - ₹120</option>
+        <option value="Latte">Latte - ₹140</option>
+        <option value="Espresso">Espresso - ₹100</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+
+    <input
+        type="number"
+        id="quantity"
+        min="1"
+        value="1"
+        required
+    >
+
+    <button type="submit" class="btn">
+        Place Order
+    </button>
+
+</form>
+
 
                 </div>
 
